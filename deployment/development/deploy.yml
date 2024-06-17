@@ -24,8 +24,8 @@ services:
       - DATABASE_USERNAME=${DATABASE_USERNAME}
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
       - DATABASE_SSL=false
-      - PUBLIC_URL=http://openscience.orbitone.cc:1337
-      - STRAPI_ADMIN_BACKEND_URL=http://openscience.orbitone.cc:1337
+      - PUBLIC_URL=http://openscience.peliscast.com:1337
+      - STRAPI_ADMIN_BACKEND_URL=http://openscience.peliscast.com:1337
       - HOST=0.0.0.0
     volumes:
       - ./config:/opt/app/config
