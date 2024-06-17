@@ -89,7 +89,16 @@ jobs:
           username: ${{ secrets.AWS_SSH_USER }}
           key: ${{ secrets.AWS_SSH_PRIVATE_KEY }}
           port: 22
-
+      - name: Stop and remove existing containers
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          host: ${{ secrets.AWS_SSH_HOST }}
+          username: ${{ secrets.AWS_SSH_USER }}
+          key: ${{ secrets.AWS_SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd /home/${{ secrets.AWS_SSH_USER }}/deploy/deployment/${{ env.NODE_ENV }}/
+            docker-compose down
       - name: Deploy with Docker Compose on EC2
         uses: appleboy/ssh-action@master
         with:
