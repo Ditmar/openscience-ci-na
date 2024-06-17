@@ -69,7 +69,7 @@ jobs:
       - name: Debug SSH key
         run: echo "${{ secrets.AWS_SSH_PRIVATE_KEY }}"
       - name: Copy Docker Compose file to EC2
-        uses: appleboy/scp-action@latest
+        uses: appleboy/scp-action@v0.1.3
         with:
           source: ${{ env.DEPLOY_FILE }}
           target: "/home/${{ secrets.AWS_SSH_USER }}/docker-compose.yml"
