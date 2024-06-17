@@ -3,7 +3,7 @@ networks:
   service-net:
 services:
   strapi:
-    image: "ditmar/strapi-cms:${STRAPI_APP}"
+    image: "ditmar/openscience-strapi:${STRAPI_APP}"
     networks:
       - service-net
     labels:
@@ -37,7 +37,7 @@ services:
 
     restart: always
   webapp:
-    image: "ditmar/magazine-spa:${WEB_APP}"
+    image: "ditmar/openscience:${WEB_APP}"
     networks:
       - service-net
     environment:
