@@ -98,7 +98,7 @@ jobs:
           port: 22
           script: |
             cd /home/${{ secrets.AWS_SSH_USER }}/deploy/deployment/${{ env.NODE_ENV }}/
-            docker-compose down
+            docker-compose -f deploy.yml down
       - name: Deploy with Docker Compose on EC2
         uses: appleboy/ssh-action@master
         with:
