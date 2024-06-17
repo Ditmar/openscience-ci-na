@@ -58,7 +58,8 @@ jobs:
             echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME_DEV }}" >> $GITHUB_ENV
             echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD_DEV }}" >> $GITHUB_ENV
           fi
-
+      - name: Debug SSH key
+        run: echo "${{ secrets.AWS_SSH_PRIVATE_KEY }}"
       - name: Copy Docker Compose file to EC2
         uses: appleboy/scp-action@v0.1.1
         with:
