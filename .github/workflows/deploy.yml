@@ -118,4 +118,5 @@ jobs:
 
       - name: Clean up
         if: github.event_name == 'workflow_dispatch'
-        run: docker system prune -f && docker image prune -a -f
+        run: docker image prune -a -f
+        
